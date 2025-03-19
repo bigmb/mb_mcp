@@ -1,0 +1,7 @@
+mcp
+langgraph
+langchain_mcp_adapters
+mcp
+flask
+python-dotenv
+flask-cors
