@@ -1,29 +1,27 @@
-from setuptools import setup, find_packages
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from setuptools import setup,find_packages
 import os
 
-with open("VERSION.txt", "r") as f:
-    version = f.read().strip()
-
-with open("README.md", "r") as f:
-    long_description = f.read()
-
-with open("requirements.txt", "r") as f:
-    requirements = f.read().splitlines()
-
+VERSION_FILE = os.path.join(os.path.dirname(__file__), "VERSION.txt")
+print(VERSION_FILE)
 setup(
     name="mb_mcp",
-    version=version,
-    author="Malav",
     description="Claude MCP (Multimodal Conversational Program) with mb_rag integration",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/bigmb/mb_mcp",
+    author=["Malav Bateriwala"],
     packages=find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
-    python_requires=">=3.8",
-    install_requires=requirements,
+    #packages=find_packages(),
+    scripts=[],
+    install_requires=[],
+    setup_requires=["setuptools-git-versioning<2"],
+    python_requires='>=3.8',
+    setuptools_git_versioning={
+        "enabled": True,
+        "version_file": VERSION_FILE,
+        "count_commits_from_version_file": True,
+        "template": "{tag}",
+        "dev_template": "{tag}.dev{ccount}+{branch}",
+        "dirty_template": "{tag}.post{ccount}",
+    },
 )
