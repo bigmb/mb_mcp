@@ -15,6 +15,9 @@ new_text_files
 *.webm
 *.vtt
 
+servers/
+servers/*
+servers
 
 ## ignore all examples files and folders
 *.ipynb_checkpoints
