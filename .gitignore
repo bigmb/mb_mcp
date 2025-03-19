@@ -44,3 +44,7 @@ Thumbs.db
 
 # Embedded git repositories
 servers/
+
+# Windsurf rules
+.windsurf/
+.windsurf_rules
